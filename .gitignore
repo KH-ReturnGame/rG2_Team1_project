@@ -73,3 +73,8 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+Assets/#4 Sprite/sword.png
+Assets/#4 Sprite/sword.mdp
+.gitignore
+Assets/#4 Sprite/sword.png.meta
+Assets/#4 Sprite/sword.mdp.meta
