@@ -453,6 +453,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
+  targetImage: {fileID: 0}
+  image1: {fileID: 0}
+  animationFrames:
+  - {fileID: -8360621857648827146, guid: a1040da4371259748ae425f02bb4840e, type: 3}
+  - {fileID: -8360621857648827146, guid: dfe7b0e0f546a2a49a23919d14188d13, type: 3}
+  frameDuration: 0.2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

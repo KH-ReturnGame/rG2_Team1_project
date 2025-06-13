@@ -15,12 +15,15 @@ public class PlayerTest_Move : MonoBehaviour
     }
 }
 */
+
+/*
 using UnityEngine;
 
 
 public class PlayerTest_Move : MonoBehaviour
 {
     public float moveSpeed = 10f;
+    private bool facingRight = true;
     void Update()
     {
         float moveX = 0f;
@@ -37,5 +40,119 @@ public class PlayerTest_Move : MonoBehaviour
 
         Vector2 move = new Vector2(moveX, 0) * moveSpeed * Time.deltaTime; 
         transform.Translate(move, Space.World);
+    }
+}
+*/
+
+/*
+using UnityEngine;
+
+public class PlayerTest_Move : MonoBehaviour
+{
+    public float moveSpeed = 5f;
+    private bool facingRight = true;
+
+    void Update()
+    {
+        float moveX = 0f;
+
+        if (Input.GetKey(KeyCode.D))
+            moveX = 1f;
+        else if (Input.GetKey(KeyCode.A))
+            moveX = -1f;
+
+        // 이동
+        Vector3 move = new Vector3(moveX, 0, 0) * moveSpeed * Time.deltaTime;
+        transform.Translate(move, Space.World);
+
+        // 좌우 반전
+        if (moveX > 0 && !facingRight)
+        {
+            Flip();
+        }
+        else if (moveX < 0 && facingRight)
+        {
+            Flip();
+        }
+    }
+
+    void Flip()
+    {
+        facingRight = !facingRight; //대입
+
+        Vector3 scale = transform.localScale; // 냅둬그냥
+        scale.x *= -1;
+        transform.localScale = scale;
+    }
+}
+*/
+
+/*TODO
+애니메이션 스프라이트 바꾸기
+(아직 안 바꿔서 오류남)
++ 코드 분석하기
+
+*/
+
+
+using UnityEngine;
+using UnityEngine.UI; //UI쓴대요
+
+public class PlayerTest_Move : MonoBehaviour
+{
+    public float moveSpeed = 10f;
+    private bool facingRight = true;
+
+    public Image targetImage;
+    public Sprite image1;
+    public Sprite[] animationFrames;
+    public float frameDuration = 0.2f; //프레임 간격
+
+    private int currentFrame = 0;
+    private float timer = 0f; //Time.deltaTime이 float
+
+    void Update()
+    {
+        float moveX = 0f; //0으로 초기화
+
+        if (Input.GetKey(KeyCode.D))
+            moveX = 1f;
+        else if (Input.GetKey(KeyCode.A))
+            moveX = -1f;
+
+        // 이동
+        Vector3 move = new Vector3(moveX, 0, 0) * moveSpeed * Time.deltaTime;
+        transform.Translate(move, Space.World);
+
+        // 좌우 반전 (필요시)
+        if (moveX > 0 && !facingRight) Flip();
+        else if (moveX < 0 && facingRight) Flip();
+
+        // 이미지 애니메이션
+        if (moveX != 0)
+        {
+            timer += Time.deltaTime;
+
+            if (timer >= frameDuration)
+            {
+                timer = 0f;
+                currentFrame = (currentFrame + 1) % animationFrames.Length;
+                targetImage.sprite = animationFrames[currentFrame];
+            }
+        }
+        else
+        {
+            targetImage.sprite = image1;
+            currentFrame = 0;
+            timer = 0f;
+        }
+    }
+
+    void Flip()
+    {
+        facingRight = !facingRight; //대입
+        Vector3 scale = transform.localScale; // 냅둬그냥
+        scale.x *= -1;
+        transform.localScale = scale; 
     }
 }
