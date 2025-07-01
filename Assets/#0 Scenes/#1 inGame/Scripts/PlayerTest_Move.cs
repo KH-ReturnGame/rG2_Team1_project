@@ -142,7 +142,7 @@ public class PlayerTest_Move : MonoBehaviour
         }
         else
         {
-            targetImage.sprite = image1;
+            
             currentFrame = 0;
             timer = 0f;
         }
