@@ -4,8 +4,8 @@ public class Playermovelimit : MonoBehaviour
 {
 
     void Update()
-    {
-    float h = Input.GetAxis("Horizontal");
+    { 
+        float h = Input.GetAxis("Horizontal");
 
         // 현재 위치에 h 방향으로 이동 계산
         Vector3 pos = transform.position;
