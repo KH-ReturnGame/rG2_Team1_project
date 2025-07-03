@@ -10,11 +10,13 @@ public class PlayerTest_Move : MonoBehaviour
     SpriteRenderer spriteRenderer;
     Animator anim;
     public float AttackCoolDown = 0.8f;
+    BoxCollider2D boxCollider2D;
 
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
     }
     void Update()
     {
@@ -42,9 +44,11 @@ public class PlayerTest_Move : MonoBehaviour
         transform.position = pos;
 
         // 공격
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.K) && anim.GetBool("isAttack") == false)
         {
+            boxCollider2D.size = new Vector2(0.15f, 0.16f);
             transform.localScale = new Vector3(6, 6, 6);
+
             StartCoroutine(AttackCoroutine(AttackCoolDown));
 
         }
@@ -54,7 +58,9 @@ public class PlayerTest_Move : MonoBehaviour
     {
         anim.SetBool("isAttack", true);
         yield return new WaitForSeconds(AttackCoolDown2);
+
         transform.localScale = new Vector3(1, 1, 1);
+        boxCollider2D.size = new Vector2(1.0f, 1.0f);
         anim.SetBool("isAttack", false);
 
     }
