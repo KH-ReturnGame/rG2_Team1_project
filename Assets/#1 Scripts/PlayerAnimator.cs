@@ -8,7 +8,7 @@ public class PlayerAnimator : MonoBehaviour
     {
         animator_ = GetComponent<Animator>();
     }
-
+// 애니메이션 작동 코드
     void Update()
     {
         if (Input.GetKey(KeyCode.D))
@@ -23,7 +23,7 @@ public class PlayerAnimator : MonoBehaviour
         {
             animator_.SetBool("isRun", false);
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space))
         {
             animator_.SetBool("isJump", true);
         }
