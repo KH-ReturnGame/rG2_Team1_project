@@ -42,7 +42,7 @@ public class PlayerTest_Move : MonoBehaviour
         transform.position = pos;
 
         // 공격
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.K))
         {
             StartCoroutine(AttackCoroutine(AttackCoolDown));
 

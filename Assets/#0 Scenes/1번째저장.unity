@@ -753,7 +753,6 @@ GameObject:
   - component: {fileID: 902361456}
   - component: {fileID: 902361460}
   - component: {fileID: 902361461}
-  - component: {fileID: 902361462}
   - component: {fileID: 902361464}
   - component: {fileID: 902361463}
   - component: {fileID: 902361465}
@@ -936,22 +935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  targetImage: {fileID: 0}
-  image1: {fileID: 0}
-  animationFrames: []
-  frameDuration: 0.2
---- !u!114 &902361462
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 902361455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22a7d4458546ccf4c924c36b8ed66a82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  AttackCoolDown: 0.8
 --- !u!95 &902361463
 Animator:
   serializedVersion: 7
