@@ -44,6 +44,7 @@ public class PlayerTest_Move : MonoBehaviour
         // 공격
         if (Input.GetKeyDown(KeyCode.K))
         {
+            transform.localScale = new Vector3(6, 6, 6);
             StartCoroutine(AttackCoroutine(AttackCoolDown));
 
         }
@@ -53,6 +54,7 @@ public class PlayerTest_Move : MonoBehaviour
     {
         anim.SetBool("isAttack", true);
         yield return new WaitForSeconds(AttackCoolDown2);
+        transform.localScale = new Vector3(1, 1, 1);
         anim.SetBool("isAttack", false);
 
     }
