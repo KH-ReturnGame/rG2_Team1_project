@@ -12,7 +12,7 @@ public class Playermovelimit : MonoBehaviour
         
 
         // 좌우 범위 제한 
-        pos.x = Mathf.Clamp(pos.x, -5.66f, 3.69f);
+        pos.x = Mathf.Clamp(pos.x, -6.24f, 4.26f);
 
         // 위치 적용
         transform.position = pos;
