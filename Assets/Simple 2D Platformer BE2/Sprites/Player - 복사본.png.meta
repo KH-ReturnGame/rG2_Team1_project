@@ -334,7 +334,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      "Player - \uBCF5\uC0AC\uBCF8_0": 5639612180046531833
+      "Player - \uBCF5\uC0AC\uBCF8_1": -2056528551869187960
+      "Player - \uBCF5\uC0AC\uBCF8_2": -3333251184486601857
+      "Player - \uBCF5\uC0AC\uBCF8_3": -5991364492170662801
+      "Player - \uBCF5\uC0AC\uBCF8_4": -1483313149506144204
+      "Player - \uBCF5\uC0AC\uBCF8_5": 8484154973203046064
+      "Player - \uBCF5\uC0AC\uBCF8_6": -3311291288662811624
+      "Player - \uBCF5\uC0AC\uBCF8_7": 1241335794132432374
+      "Player - \uBCF5\uC0AC\uBCF8_8": 838167064732785159
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
