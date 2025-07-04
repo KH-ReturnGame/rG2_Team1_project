@@ -40,7 +40,7 @@ public class PlayerTest_Move : MonoBehaviour
         transform.Translate(move, Space.World); //move는 이동량
 
         Vector3 pos = transform.position;
-        pos.x = Mathf.Clamp(pos.x, -5.66f, 3.69f); // 위치의 수치 제한
+        pos.x = Mathf.Clamp(pos.x, -7.11f, 5.85f); // 위치의 수치 제한
         transform.position = pos;
 
         // 공격
