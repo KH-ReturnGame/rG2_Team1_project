@@ -6,7 +6,8 @@ public class PlayerJump : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rigid; // 인스펙터에서 보이게 설정한 물리 컴포넌트
     public float jumpPower = 5f;              
-    public bool _Jump = false;                 
+    public bool _Jump = false;
+    public AudioSource JumpSound;                 
 
 
     private void Awake()
@@ -24,6 +25,9 @@ public class PlayerJump : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !_Jump)
         {
+            JumpSound.pitch = Random.Range(0.8f, 1.2f);
+            JumpSound.Play();
+            
             _Jump = true; 
             rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse); 
         }
