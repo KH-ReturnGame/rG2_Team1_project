@@ -23,15 +23,7 @@ public class PlayerAnimator : MonoBehaviour
         {
             animator_.SetBool("isRun", false);
         }
-        if (Input.GetKey(KeyCode.Space))
-        {
-            animator_.SetBool("isJump", true);
-        }
-        else
-        {
-            animator_.SetBool("isJump", false);
-        }
-
+        
     }
 }
 
