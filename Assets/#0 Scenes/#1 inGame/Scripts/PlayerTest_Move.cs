@@ -44,7 +44,7 @@ public class PlayerTest_Move : MonoBehaviour
         transform.position = pos;
 
         // 공격
-        if (Input.GetKeyDown(KeyCode.K) && anim.GetBool("isAttack") == false)
+        if (Input.GetKeyDown(KeyCode.K) && anim.GetBool("isAttack") == false && anim.GetBool("isJump") == false)
         {
             boxCollider2D.size = new Vector2(0.15f, 0.16f);
             transform.localScale = new Vector3(6, 6, 6);
