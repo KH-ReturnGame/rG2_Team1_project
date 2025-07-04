@@ -1,8 +1,6 @@
 using UnityEngine;
-using UnityEngine.UI; //UI쓴대요
 using System.Collections;
-using Unity.VisualScripting;
-using System.Security.Cryptography.X509Certificates;
+
 
 public class PlayerTest_Move : MonoBehaviour
 {
@@ -11,12 +9,14 @@ public class PlayerTest_Move : MonoBehaviour
     Animator anim;
     public float AttackCoolDown = 0.8f;
     BoxCollider2D boxCollider2D;
+    public AudioSource AttackSound;
 
     void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
+        AttackSound = GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -48,6 +48,9 @@ public class PlayerTest_Move : MonoBehaviour
         {
             boxCollider2D.size = new Vector2(0.15f, 0.16f);
             transform.localScale = new Vector3(6, 6, 6);
+
+            AttackSound.pitch = Random.Range(0.8f, 1.2f);
+            AttackSound.Play();
 
             StartCoroutine(AttackCoroutine(AttackCoolDown));
 
